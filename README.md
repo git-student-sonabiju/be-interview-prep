@@ -31,6 +31,8 @@ The API listens on `http://localhost:8080`. The H2 console is at `/h2-console` (
 ./mvnw test
 ```
 
+To watch the product cache work, start the app with SQL logging (`./mvnw spring-boot:run -Dspring-boot.run.arguments=--logging.level.org.hibernate.SQL=debug`) and call `GET /api/products/1` twice: only the first call logs a `select`. `ProductCatalogTest` asserts the same thing with Hibernate statistics.
+
 Tests need no environment variables: the test configuration generates a random JWT secret per run. On Windows use `mvnw.cmd` instead of `./mvnw`.
 
 ## Questions
