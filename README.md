@@ -43,4 +43,8 @@ Tests need no environment variables: the test configuration generates a random J
 | 2 | URL Shortener | [#2](https://github.com/git-student-sonabiju/be-interview-prep/pull/2) |
 | 3 | Authentication & Roles | [#3](https://github.com/git-student-sonabiju/be-interview-prep/pull/3) |
 | 4 | Product Catalog | [#4](https://github.com/git-student-sonabiju/be-interview-prep/pull/4) |
-| 5 | Order Service | |
+| 5 | Order Service | [#5](https://github.com/git-student-sonabiju/be-interview-prep/pull/5) |
+
+## Video walkthrough
+
+YouTube (unlisted): _link added after recording_
