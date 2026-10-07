@@ -1,3 +1,8 @@
 app:
   jwt:
     secret: ${random.value}${random.value}
+spring:
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
