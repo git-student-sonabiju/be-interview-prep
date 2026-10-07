@@ -31,7 +31,7 @@ The API listens on `http://localhost:8080`. The H2 console is at `/h2-console` (
 ./mvnw test
 ```
 
-Tests need no environment variables: the test profile generates a random JWT secret per run. On Windows use `mvnw.cmd` instead of `./mvnw`.
+Tests need no environment variables: the test configuration generates a random JWT secret per run. On Windows use `mvnw.cmd` instead of `./mvnw`.
 
 ## Questions
 
