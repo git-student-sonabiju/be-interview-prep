@@ -7,6 +7,7 @@ import jakarta.validation.ConstraintViolationException;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +64,12 @@ public class GlobalExceptionHandler {
             return ResponseEntity.badRequest().body(ApiError.withFieldErrors(request.getRequestURI(), List.of(violation)));
         }
         return build(HttpStatus.BAD_REQUEST, "Request body is missing or malformed", request);
+    }
+
+    @ExceptionHandler(PropertyReferenceException.class)
+    public ResponseEntity<ApiError> handleUnknownSortProperty(PropertyReferenceException ex, HttpServletRequest request) {
+        ApiError.FieldViolation violation = new ApiError.FieldViolation("sort", "unknown property '" + ex.getPropertyName() + "'");
+        return ResponseEntity.badRequest().body(ApiError.withFieldErrors(request.getRequestURI(), List.of(violation)));
     }
 
     @ExceptionHandler({MissingServletRequestParameterException.class, MissingRequestHeaderException.class})
